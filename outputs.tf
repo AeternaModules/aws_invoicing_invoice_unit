@@ -1,7 +1,3 @@
-output "invoicing_invoice_units_id" {
-  description = "Map of id values across all invoicing_invoice_units, keyed the same as var.invoicing_invoice_units"
-  value       = { for k, v in aws_invoicing_invoice_unit.invoicing_invoice_units : k => v.id if v.id != null && length(v.id) > 0 }
-}
 output "invoicing_invoice_units_arn" {
   description = "Map of arn values across all invoicing_invoice_units, keyed the same as var.invoicing_invoice_units"
   value       = { for k, v in aws_invoicing_invoice_unit.invoicing_invoice_units : k => v.arn if v.arn != null && length(v.arn) > 0 }
